@@ -25,7 +25,26 @@ namespace Final.Controllers
             }
             if (numero > 0)
             {
-                respuesta = "Usted ingreso el número";
+                respuesta = "Usted ingreso el número" + numero;
+            }
+
+            return respuesta;
+        }
+        [HttpPost]
+        public string operacionpost([FromHeader]int numero)
+        {
+            string respuesta = "";
+            if (numero < 0)
+            {
+                respuesta = "ERROR";
+            }
+            if (numero == 0)
+            {
+                respuesta = "Realizado por Anahi Agreda";
+            }
+            if (numero > 0)
+            {
+                respuesta = "Usted ingreso el número" + numero;
             }
 
             return respuesta;
